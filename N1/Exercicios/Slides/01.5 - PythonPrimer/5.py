@@ -9,8 +9,7 @@ que testam o paradoxo para n = 5,10,15,20,...,100.
 from random import randint
 
 def have_same_birthday(n: int) -> bool:
-    birthdays = [randint(1, 366) for _ in range(n)]
-    return len(set(birthdays)) != len(birthdays)
+    return len(set(randint(1, 366) for _ in range(n))) != n
 
 if __name__ == "__main__":
     for i in range(5, 101, 5):
