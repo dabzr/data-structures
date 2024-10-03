@@ -1,3 +1,8 @@
+"""
+Escreva uma função em Python que receba um inteiro positivo n 
+e retorne a soma dos quadrados de todos os inteiros positivos menores do que n.
+"""
+
 from functools import reduce
 from operator import add
 
