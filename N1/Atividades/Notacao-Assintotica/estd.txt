@@ -1,0 +1,8 @@
+O(1): Adicionar um elemento num vetor de tamanho n(append/push).
+O(n): Procurar um elemento num vetor desorganizado de tamanho n.
+O(n²): Procurar um elemento numa matriz nxn.
+O(logn): Procurar um elemento num vetor organizado de tamanho n(busca binária).
+O(nlogn): Organizar um vetor de tamanho n(merge/quick sort).
+
+Dependendo da natureza do problema a escolha do algoritmo, pode influenciar na velocidade de execução do algoritmo. Logo, é interessante que  haja uma análise do problema afim de escolher qual o melhor algoritmo para sua solução, visto que diferentes algoritmos podem ser melhores para problemas diferentes em situações diferentes, como quantidade de dados, ambiente de processamento (CPU/GPU/TPU).
+
