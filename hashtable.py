@@ -12,8 +12,13 @@ class HashTable:
 
     def hash(self, key):
         return sum(map(ord, str(key))) % self.capacity
+    
     def keys(self):
         return self.__keys
+
+    def __contains__(self, key):
+        return self[key] is not None
+
     def __setitem__(self, key, value):
         idx = self.hash(key)
         if self.table[idx] is None:
@@ -50,3 +55,4 @@ a["K"] = 5
 a["V"] = 6
 print(a["V"])
 print(a.keys())
+print("V" in a)
