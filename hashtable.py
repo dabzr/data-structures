@@ -1,3 +1,6 @@
+from functools import reduce
+from operator import xor
+
 class Node:
     def __init__(self, key, value):
         self.key = key
@@ -11,7 +14,7 @@ class HashTable:
         self.capacity = size
 
     def hash(self, key):
-        return sum(map(ord, str(key))) % self.capacity
+        return reduce(xor, map(ord, str(key))) % self.capacity
     
     def keys(self):
         return self.__keys
