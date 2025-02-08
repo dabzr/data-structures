@@ -9,7 +9,7 @@ class BitArray:
     def __init__(self, size):
         self.barray = [0] * (size%32)
     def set(self, idx):
-        i = idx%(len(self.barray))
+        i = (idx//32)%(len(self.barray))
         bi = idx%32
         self.barray[i] |= 1 << bi 
     def get(self, idx):
