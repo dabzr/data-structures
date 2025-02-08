@@ -13,7 +13,7 @@ class BitArray:
         bi = idx%32
         self.barray[i] |= 1 << bi 
     def get(self, idx):
-        i = idx%(len(self.barray))
+        i = (idx//32)%(len(self.barray))
         bi = idx%32
         return (self.barray[i] >> bi) & 1
 
