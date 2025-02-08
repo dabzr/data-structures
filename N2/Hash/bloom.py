@@ -42,6 +42,6 @@ for quantity, hashy, span, email in product(quantities, hashes, spans, emails):
     for i in range(span):
         lst.append(fake.email())
     randemails = [fake.email() for i in range(email)]
-    print(f"{quantity}, {hashy}, {span}, {emails}",end=": ")
+    print(f"{quantity}, {hashy}, {span}, {email}",end=": ")
     print(len(list(filter(lambda x: x in lst, randemails))))
 
