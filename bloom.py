@@ -37,8 +37,7 @@ quantities = [50, 250, 500]
 hashes = [3, 6, 9]
 spans = [50, 180, 350]
 emails = [200, 500, 1000]
-t = product(quantities, hashes, spans, emails)
-for quantity, hashy, span, email in t:
+for quantity, hashy, span, email in product(quantities, hashes, spans, emails):
     lst = Lista(quantity, hashy)
     for i in range(span):
         lst.append(fake.email())
