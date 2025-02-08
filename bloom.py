@@ -1,7 +1,9 @@
 import mmh3
 from faker import Faker
-fake = Faker()
+from itertools import product
 from random import sample
+fake = Faker()
+
 
 class BitArray:
     def __init__(self, size):
@@ -35,14 +37,12 @@ quantities = [50, 250, 500]
 hashes = [3, 6, 9]
 spans = [50, 180, 350]
 emails = [200, 500, 1000]
-for quantity in quantities:
-    for hashy in hashes:
-        for span in spans:
-            for email in emails:
-                l = Lista(quantity, hashy)
-                for i in range(span):
-                    l.append(fake.email())
-                randemails = [fake.email() for i in range(email)]
-                print(f"{quantity}, {hashy}, {span}, {emails}",end=": ")
-                print(len(list(filter(lambda x: x in l, randemails))))
+t = product(quantities, hashes, spans, emails)
+for quantity, hashy, span, email in t:
+    lst = Lista(quantity, hashy)
+    for i in range(span):
+        lst.append(fake.email())
+    randemails = [fake.email() for i in range(email)]
+    print(f"{quantity}, {hashy}, {span}, {emails}",end=": ")
+    print(len(list(filter(lambda x: x in lst, randemails))))
 

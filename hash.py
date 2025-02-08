@@ -15,7 +15,7 @@ def somatorio(string: str):
     return sum(map(ord, string))
 
 def dispersao_polinomial(string: str):
-    return sum(ord(string[i])*(97**i)for i in range(len(string)))
+    return sum(ord(string[i])*(5**i)for i in range(len(string)))
 
 def dispersao_de_deslocamento(string: str):
     return reduce(xor, map(ord, string)) ^ ord(string[0])
@@ -38,7 +38,7 @@ def dobra(k):
     return divisao(arr[0]*10 + arr[1]) if len(arr) > 1 else arr[0] 
 
 def mad(k):
-    return divisao((257*k+1)%1009)
+    return divisao((2*k+1)%3923)
 
 def hash(impl_method, compression_method):
     return lambda x: compression_method(impl_method(x))
